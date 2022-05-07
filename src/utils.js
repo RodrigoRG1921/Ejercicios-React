@@ -1,4 +1,4 @@
-const calculateFibonacciResultByNTerm = ({
+export const calculateFibonacciResultByNTerm = ({
   nTerm
 }) => {
   let result = 0;
@@ -12,8 +12,4 @@ const calculateFibonacciResultByNTerm = ({
   }
 
   return result;
-};
-
-export default {
-  calculateFibonacciResultByNTerm
 };
