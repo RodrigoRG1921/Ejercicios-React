@@ -1,11 +1,25 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
+import Fibonacci from './components/fibonacci';
+import { calculateFibonacciResultByNTerm } from './utils';
+
+const App = () => {
+  const [nTermFibonacci, setNTermFibonacci] = useState(1);
+
+  useEffect(() => {
+    const intervalReference = setInterval(() => {
+      setNTermFibonacci(_nTermFibonacci => _nTermFibonacci + 1);
+    }, 1000);
+
+    return () => clearInterval(intervalReference);
+  }, []);
+
   return (
-    <div className="App">
-      <p>Cambios by Ravermz</p>
-    </div>
+    <>
+      <Fibonacci fibonacciNumber={ calculateFibonacciResultByNTerm({ nTerm: nTermFibonacci }) }/>
+    </>
   );
-}
+};
 
 export default App;
