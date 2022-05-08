@@ -1,15 +1,21 @@
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 
 const Button = (props) =>{
-    return(
-        <button onClick={props.onClick}style={{marginLeft:"40px"}}>sort by {props.name}</button>
-    );
+  return(
+    <button onClick={props.onClick}style={{ marginLeft:'40px' }}>
+      { props.isSort ? 'sort by' : '' } {props.name}
+    </button>
+  );
 }
 
 Button.propTypes = {
-    name: PropTypes.string,
-    onClick: PropTypes.func
-
+  name: PropTypes.string,
+  onClick: PropTypes.func,
+  isSort: PropTypes.bool
 }
+
+Button.defaultProps = {
+  isSort: true
+};
 
 export default Button
