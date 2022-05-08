@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
+import MOVIES from './data'
+import Movies from './Components/Movies'
 
 const App = () => {
   return (
-    <>
-    </>
+    <div>
+      <Movies />
+    </div>
   );
 };
 
